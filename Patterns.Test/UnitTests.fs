@@ -36,6 +36,7 @@ let ``Complex sequences are round-tripped correctly`` () =
 // If the code doesn't compile, you've probably messed up
 // your data-type.
 
+
 // BEGINNING OF COMMENTED SECTION
 
 // to convert from a list of cells to a textual form
@@ -257,4 +258,6 @@ module Map =
     doMap "bw.w.wb" pattern makeWhite |> shouldEqual "ww.w.ww"
     doMap "bw.w.wb" pattern delete |> shouldEqual ".w."
     doMap "bw.w.wb" pattern double |> shouldEqual "bwbw.w.wbwb"
+
+
  // END OF COMMENTED SECTION
