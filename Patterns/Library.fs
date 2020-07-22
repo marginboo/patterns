@@ -45,11 +45,21 @@ let fromCells v =
     fells v ""
     //failwith "Not implemented" 
 
+let ten a b = 
+    match a with 
+    | BlackP -> Some b
+    | WhiteP -> Some b
+    | _ -> Some b
 let patternMatch pattern cells = 
+    match pattern with
+    | Anything -> Some cells
+    | ZeroOrMore (_) -> Some cells
+    |_ -> ten pattern cells
     // tail recursion with 
-    failwith "Not implemented"
+    //failwith "Not implemented"
 
 let find pattern cells =
+     
     // tail recursive function that finds the first occurence of sumting 
     failwith "Not implemented"
 
