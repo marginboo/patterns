@@ -26,13 +26,13 @@ let mam a = match a with
 
 let toCells v = 
     let b = Seq.toList v  
-    let rec vells d (lst: Cell list) = 
+    let rec vells d lst = 
         match d with 
         |[] -> lst
         |a::rest ->  vells rest ( lst @ [mam a]) //change to list of cells
     vells b  [] // calls the recursive function
 
-failwith "Not implemented"
+    //failwith "Not implemented"
 
 let fromCells v =
     let rec fells b lst = 
@@ -43,12 +43,16 @@ let fromCells v =
                                               | White -> 'w'
                                               | Unknown -> '.' ))
     fells v ""
-failwith "Not implemented" 
+    //failwith "Not implemented" 
 
 let patternMatch pattern cells = 
-    
-failwith "Not implemented"
+    // tail recursion with 
+    failwith "Not implemented"
 
-let find pattern cells = failwith "Not implemented"
+let find pattern cells =
+    // tail recursive function that finds the first occurence of sumting 
+    failwith "Not implemented"
 
-let map func pattern cells = failwith "Not implemented"
+let map func pattern cells = 
+    // 
+    failwith "Not implemented"
