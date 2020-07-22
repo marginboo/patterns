@@ -19,15 +19,17 @@ type Pattern =
 | Anything 
 | EndOfCells 
 
+let mam a = match a with 
+            | 'b' | 'B' -> Black
+            | 'w' | 'W' -> White
+            | _  -> Unknown
+
 let toCells v = 
     let b = Seq.toList v  
     let rec vells d (lst: Cell list) = 
         match d with 
         |[] -> lst
-        |a::rest ->  vells rest ( lst @ [match a with 
-                                         | 'b' | 'B' -> Black
-                                         | 'w' | 'W' -> White
-                                         | _  -> Unknown]) //change to list of cells
+        |a::rest ->  vells rest ( lst @ [mam a]) //change to list of cells
     vells b  [] // calls the recursive function
 
 failwith "Not implemented"
@@ -43,7 +45,9 @@ let fromCells v =
     fells v ""
 failwith "Not implemented" 
 
-let patternMatch pattern cells = failwith "Not implemented"
+let patternMatch pattern cells = 
+    
+failwith "Not implemented"
 
 let find pattern cells = failwith "Not implemented"
 
