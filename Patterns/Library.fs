@@ -8,8 +8,8 @@ type Cell =
 
 type Pattern = 
 | BlackP 
-| WhiteP
-| UnknownP
+| WhiteP  
+| UnknownP 
 | ZeroOrMore of Pattern
 | OneOrMore of  Pattern
 | Exactly of (int * Pattern)
@@ -44,22 +44,34 @@ let fromCells v =
                                               | Unknown -> '.' ))
     fells v ""
     //failwith "Not implemented" 
-
+(*let where a = 
+    match (List.exists a) with 
+    | true -> Some  
+    | false -> None a 
+let one a =  failwith ""
 let ten a b = 
     match a with 
-    | BlackP -> Some b
+    | BlackP -> where b 
     | WhiteP -> Some b
-    | _ -> Some b
+    | _ -> Some b*)
 let patternMatch pattern cells = 
-    match pattern with
-    | Anything -> Some cells
-    | ZeroOrMore (_) -> Some cells
-    |_ -> ten pattern cells
+    (* pattern with
+    | BlackP  -> match List.tryFind cells with 
+                    | true -> Some cells 
+                    | None -> None 
+
+    | Anything -> Some cells 
+    | ZeroOrMore (a) -> Some a
+    | OneOrMore (a) ->
+    *)
     // tail recursion with 
-    //failwith "Not implemented"
+    failwith "Not implemented"
 
 let find pattern cells =
-     
+    let an = List.filter pattern cells
+    match an with 
+    | [] -> None 
+    | _ -> Some (pattern, List.length cells )
     // tail recursive function that finds the first occurence of sumting 
     failwith "Not implemented"
 
